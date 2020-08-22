@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Chipster</string>
+    <string name="hcp_formatted_int_frac">%1$d.%2$d</string>
+    <string name="amount_of_rounds_played">%1$d</string>
+    <string name="avg_score_formatted_int_frac">%1$d.%2$d</string>
+    <string name="practiced_time_abbreviation">Pract. time</string>
+    <string name="hours_minutes_formatted">%1$d:%2$d</string>
+</resources>
