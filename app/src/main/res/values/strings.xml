@@ -5,4 +5,12 @@
     <string name="avg_score_formatted_int_frac">%1$d.%2$d</string>
     <string name="practiced_time_abbreviation">Pract. time</string>
     <string name="hours_minutes_formatted">%1$d:%2$d</string>
+    <string name="average_session">Avg. session</string>
+    <string name="handicap">HANDICAP</string>
+    <string name="rounds">ROUNDS</string>
+    <string name="avg_score">AVG. SCORE</string>
+    <string name="total_sessions">Tot. sessions</string>
+    <string name="total_sessions_formatted">%1$d</string>
+    <string name="change_handicap">Chg. handicap</string>
+    <string name="change_in_handicap_formatted">%1$s%2$d.%3$d</string>
 </resources>
