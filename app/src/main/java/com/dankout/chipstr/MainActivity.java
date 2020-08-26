@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.dankout.chipstr.ui.StartAddRoundFragment;
 import com.dankout.chipstr.ui.UserFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayout.Tab;
@@ -46,7 +47,22 @@ public class MainActivity extends FragmentActivity {
         @NonNull
         @Override
         public Fragment createFragment(int position) {
-            return new UserFragment();
+            Fragment newFragment = null;
+
+            switch (position) {
+                case 0:
+                    newFragment = new UserFragment();
+                    break;
+                case 1:
+                    newFragment = new StartAddRoundFragment();
+                    break;
+            }
+
+            if (newFragment == null) {
+                //Just for test gonna be removed later and replaced by a third switch statement
+                newFragment = new StartAddRoundFragment();
+            }
+            return newFragment;
         }
 
         @Override

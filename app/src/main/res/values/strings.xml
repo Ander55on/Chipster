@@ -13,4 +13,7 @@
     <string name="total_sessions_formatted">%1$d</string>
     <string name="change_handicap">Chg. handicap</string>
     <string name="change_in_handicap_formatted">%1$s%2$d.%3$d</string>
+    <string name="tee_off">Tee off</string>
+    <string name="add_round">Add Round</string>
+    <string name="show_rounds_button_text">rounds</string>
 </resources>
