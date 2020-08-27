@@ -18,8 +18,8 @@ import com.dankout.chipstr.RoundActivity;
 public class StartAddRoundFragment extends Fragment {
     public static final String EXTRA_MESSAGE_FRAGMENT_TO_CREATE = "com.dankout.chipster.button_pressed";
 
-    /*Used as extra messages so RoundActivity knows what kind of
-    fragment to create*/
+    /*Used as extra messages so RoundActivity can create
+    the correct fragment depending on user input*/
     public static final int ADD = 1;
     public static final int SHOW = 2;
     public static final  int START = 3;
