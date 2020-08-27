@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionScene 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<MotionScene
     xmlns:motion="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="urn:oasis:names:tc:xliff:document:1.2">
 
     <Transition
         motion:constraintSetEnd="@layout/user_fragment_motion_scene_end"
-        motion:constraintSetStart="@layout/user_fragment_motion_scene_start">
-        <OnSwipe motion:touchAnchorSide="top"
-            motion:dragDirection="dragUp"/>
+        motion:constraintSetStart="@layout/user_fragment_motion_scene_start"
+        app:duration="500"
+        app:interpolator="easeIn">
+        <OnSwipe
+            motion:dragScale="1000"
+            motion:touchAnchorSide="bottom"
+            motion:dragDirection="dragUp"
+
+         />
+
     </Transition>
 </MotionScene>
