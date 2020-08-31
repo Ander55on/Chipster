@@ -23,6 +23,7 @@
         android:textSize="24sp" />
 
     <LinearLayout
+        android:id="@+id/par_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -153,6 +154,7 @@
         android:textSize="24sp" />
 
     <LinearLayout
+        android:id="@+id/strokes_linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -296,6 +298,7 @@
         android:textSize="24sp" />
 
     <LinearLayout
+        android:id="@+id/putts_linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

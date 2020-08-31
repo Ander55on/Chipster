@@ -1,6 +1,7 @@
 package com.dankout.chipstr.model;
 
 import java.sql.Date;
+import java.util.UUID;
 
 public class Round {
 
@@ -8,12 +9,18 @@ public class Round {
 
     //slope rating of the golf course
     private int mSlope;
-    private int[] mHoles;
+    private Hole[] mHoles;
+    private String mID;
 
     public Round(Date date, int slope, int numberOfHoles) {
+        mID = UUID.randomUUID().toString();
         mDatePlayed = date;
         mSlope = slope;
-        mHoles = new int[numberOfHoles];
+        mHoles = new Hole[numberOfHoles];
+    }
+
+    public String getID() {
+        return mID;
     }
 
     public Date getDatePlayed() {
@@ -24,7 +31,7 @@ public class Round {
         return mSlope;
     }
 
-    public int[] getHoles() {
+    public Hole[] getHoles() {
         return mHoles;
     }
 }

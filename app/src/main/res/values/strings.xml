@@ -46,16 +46,18 @@
     <string name="par_value_5">5</string>
     <string name="par_value_4">4</string>
     <string name="par_value_3">3</string>
-    <string name="par">Par</string>
-    <string name="index">Index</string>
-    <string name="strokes">Strokes</string>
+    <string name="par">Par %1$d</string>
+    <string name="index">Index %1$d</string>
+    <string name="strokes">Strokes %1$d</string>
     <string name="stroke_value_7">7</string>
     <string name="stroke_value_other">+</string>
     <string name="putt_value_1">1</string>
     <string name="putt_value_2">2</string>
     <string name="putt_value_3">3</string>
     <string name="putt_value_other">+</string>
-    <string name="putts">Putts</string>
+    <string name="putts">Putts %1$d</string>
     <string name="index_edit">+</string>
     <string name="hole_out">Hole Out</string>
+    <string name="slope">Slope</string>
+    <string name="holes">Holes</string>
 </resources>

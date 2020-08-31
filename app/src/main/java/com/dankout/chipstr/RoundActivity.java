@@ -4,8 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
-
-import com.dankout.chipstr.ui.HoleFragment;
+import androidx.fragment.app.FragmentManager;
 
 public class RoundActivity extends FragmentActivity {
 
@@ -20,8 +19,9 @@ public class RoundActivity extends FragmentActivity {
                 return;
             }
 
-            HoleFragment fragment = new HoleFragment();
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
+            FragmentManager fm = getSupportFragmentManager();
+            SetupRoundDialogFragment dialog = new SetupRoundDialogFragment();
+            dialog.show(fm, null);
 
         }
     }
