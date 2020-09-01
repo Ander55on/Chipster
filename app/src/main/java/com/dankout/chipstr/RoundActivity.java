@@ -22,7 +22,6 @@ public class RoundActivity extends FragmentActivity {
             FragmentManager fm = getSupportFragmentManager();
             SetupRoundDialogFragment dialog = new SetupRoundDialogFragment();
             dialog.show(fm, null);
-
         }
     }
 }
