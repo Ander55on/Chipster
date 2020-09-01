@@ -10,6 +10,7 @@ import java.util.List;
 
 public class RoundRepository {
 
+    private final String TAG = "RoundRepo";
     private static RoundRepository instance;
     private ArrayList<Round> mRounds = new ArrayList<>();
     private HashMap<String, Round> mRoundHashMap= new HashMap<>();
@@ -25,8 +26,7 @@ public class RoundRepository {
         return mRounds;
     }
 
-    public Hole[] getHoles(String ID) {
-        //TODO handle nullPointerException with wrong ID argument
+    public Hole[] getHolesFromRound(String ID) {
         return mRoundHashMap.get(ID).getHoles();
     }
 

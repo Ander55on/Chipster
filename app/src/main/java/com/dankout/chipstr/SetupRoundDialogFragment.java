@@ -12,8 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.dankout.chipstr.ui.HoleFragment;
+import com.dankout.chipstr.viewmodel.RoundViewModel;
+
+
 
 public class SetupRoundDialogFragment extends DialogFragment {
 
@@ -24,6 +28,9 @@ public class SetupRoundDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         View v = LayoutInflater.from(getActivity()).inflate(R.layout.setup_round_dialog_fragment, null);
+
+        final RoundViewModel mRoundViewModel = new ViewModelProvider(getActivity()).get(RoundViewModel.class);
+        mRoundViewModel.init();
 
         final NumberPicker numberPickerSlope = v.findViewById(R.id.numberPickerSlope);
         final NumberPicker numberPickerHoles = v.findViewById(R.id.numberPickerHoles);
@@ -43,6 +50,13 @@ public class SetupRoundDialogFragment extends DialogFragment {
                 .setPositiveButton("OK", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                int holes = 9;
+
+                if(numberPickerHoles.getValue() == 1) {
+                    holes = 18;
+                }
+
+                mRoundViewModel.addNewRound(numberPickerSlope.getValue(), holes);
                 HoleFragment fragment = new HoleFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
             }

@@ -11,12 +11,23 @@ public class Round {
     private int mSlope;
     private Hole[] mHoles;
     private String mID;
+    private boolean mFinished;
 
     public Round(Date date, int slope, int numberOfHoles) {
         mID = UUID.randomUUID().toString();
         mDatePlayed = date;
         mSlope = slope;
         mHoles = new Hole[numberOfHoles];
+
+        mFinished = false;
+    }
+
+    public void setFinished(boolean finished) {
+        mFinished = true;
+    }
+
+    public boolean isFinished() {
+        return mFinished;
     }
 
     public String getID() {
