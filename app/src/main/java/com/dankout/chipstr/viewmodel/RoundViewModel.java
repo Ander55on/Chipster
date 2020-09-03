@@ -25,6 +25,19 @@ public class RoundViewModel extends ViewModel {
         mRounds = mRoundRepository.getRounds();
     }
 
+    public List<Round> getRounds() {
+        return mRounds;
+    }
+
+
+    public Round getLastRound() {
+        if(!mRounds.isEmpty()) {
+            return mRounds.get(mRounds.size() - 1);
+        } else {
+            return null;
+        }
+    }
+
     public void addNewRound(int slope, int numberOfHoles) {
         Calendar cal = Calendar.getInstance();
         Date date = new Date(cal.getTimeInMillis());

@@ -10,12 +10,16 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import com.dankout.chipstr.NoticeDialogListener;
 import com.dankout.chipstr.R;
 import com.dankout.chipstr.RoundActivity;
+import com.dankout.chipstr.SetupRoundDialogFragment;
 
-public class StartAddRoundFragment extends Fragment {
+public class StartAddRoundFragment extends Fragment implements NoticeDialogListener {
     public static final String EXTRA_MESSAGE_FRAGMENT_TO_CREATE = "com.dankout.chipster.button_pressed";
 
     /*Used as extra messages so RoundActivity can create
@@ -38,12 +42,17 @@ public class StartAddRoundFragment extends Fragment {
         mAddRoundButton = v.findViewById(R.id.add_round_button);
         mViewRoundsButton = v.findViewById(R.id.show_rounds_button);
 
+        final FragmentManager fm = getActivity().getSupportFragmentManager();
+        final SetupRoundDialogFragment dialog = new SetupRoundDialogFragment();
+        dialog.setTargetFragment(this,1);
+
         mStartNewRoundButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                startRoundActivity(mStartNewRoundButton);
+                dialog.show(fm, null);
             }
         });
+
         return v;
     }
 
@@ -61,5 +70,15 @@ public class StartAddRoundFragment extends Fragment {
        Intent intent = new Intent(getActivity(), RoundActivity.class);
        intent.putExtra(EXTRA_MESSAGE_FRAGMENT_TO_CREATE, extraMessage);
        startActivity(intent);
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        startRoundActivity(mStartNewRoundButton);
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+
     }
 }

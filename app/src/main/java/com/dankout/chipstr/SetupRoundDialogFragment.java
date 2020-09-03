@@ -2,7 +2,6 @@ package com.dankout.chipstr;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.dankout.chipstr.ui.HoleFragment;
 import com.dankout.chipstr.viewmodel.RoundViewModel;
 
 
@@ -23,6 +21,8 @@ public class SetupRoundDialogFragment extends DialogFragment {
 
     private final int maximumSlopeValue = 155;
     private final int minimumSlopeValue = 55;
+
+    private NoticeDialogListener mListener;
 
     @NonNull
     @Override
@@ -44,10 +44,12 @@ public class SetupRoundDialogFragment extends DialogFragment {
 
         numberPickerHoles.setDisplayedValues(displayedHoleValues);
 
+        mListener = (NoticeDialogListener)getTargetFragment();
+
         return new AlertDialog.Builder(getActivity())
                 .setView(v)
                 .setTitle("Setup Round")
-                .setPositiveButton("OK", new OnClickListener() {
+                .setPositiveButton("OK", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 int holes = 9;
@@ -57,15 +59,16 @@ public class SetupRoundDialogFragment extends DialogFragment {
                 }
 
                 mRoundViewModel.addNewRound(numberPickerSlope.getValue(), holes);
-                HoleFragment fragment = new HoleFragment();
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
+                mListener.onDialogPositiveClick(SetupRoundDialogFragment.this);
+
             }
         })
-                .setNegativeButton("Cancel", new OnClickListener() {
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        getActivity().finish();
+
                     }
                 }).create();
     }
+
 }
