@@ -37,6 +37,7 @@ public class MainActivity extends FragmentActivity {
                 tab.setText("Page " + position);
             }
         }).attach();
+
     }
 
     private class MainScreenPagerAdapter extends FragmentStateAdapter {
